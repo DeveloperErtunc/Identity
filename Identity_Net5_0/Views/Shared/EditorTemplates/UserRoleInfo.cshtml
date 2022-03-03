@@ -1,0 +1,7 @@
+﻿@model UserRoleInfo
+<div class="form-check">
+    <input asp-for="Name" type="hidden">
+  <input asp-for="IsHave"  class="form-check-input" type="checkbox">
+  <label asp-for="IsHave" class="form-check-label">@Model.Name </label>
+  <span asp-validation-for="IsHave" class="text-danger"></span>
+</div>

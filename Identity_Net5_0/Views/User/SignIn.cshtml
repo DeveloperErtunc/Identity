@@ -1,0 +1,35 @@
+﻿@model UserSignInModel
+<form asp-action="SignIn" asp-controller="User" method="post" class="p-3 w-75 mx-auto shadow">
+    <div class="mb-3"> 
+        <label asp-for="UserName" ></label>
+        <input asp-for="UserName" class="form-control" />
+        <span  asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+    <div class="mb-3"> 
+        <label  asp-for="Password" ></label>
+        <input  asp-for="Password" type="password" class="form-control" />
+        <span   asp-validation-for="Password" class="text-danger"></span>
+        <input id="ShowPassword" type="checkbox" onclick="myFunction()" class="form-check-input">
+        <label  for="ShowPassword" class="form-check-label">Show Password</label>
+    </div>
+    <div class="form-check">
+        <input asp-for="RememberMe" type="checkbox" class="form-check-input">
+        <label asp-for="RememberMe" class="form-check-label"></label>
+    </div>
+    <div class="text-danger mt-2" asp-validation-summary="ModelOnly">
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Sign In</button>
+    </div>
+</form>
+
+<script>
+    function myFunction() {
+  var pas = document.getElementById("Password");
+  if (pas.type === "password") {
+    pas.type = "text";
+  } else {
+    pas.type = "password";
+  }
+}
+</script>

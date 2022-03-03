@@ -1,0 +1,29 @@
+﻿@model List<UserInfo>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Count</th>
+            <th scope="col">UserName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Age</th>
+            <th scope="col">Roles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (var i = 0; i < Model.Count; i++)
+        {
+            var number = i + 1;
+            <tr>
+                
+                <th scope="row">@number</th>
+                <td>@Model[i].UserName</td>
+                <td>@Model[i].Email</td>
+                <td>@Model[i].PhoneNumber</td>
+                <td>@Model[i].Age</td>
+                <td>@Model[i].Roles</td>
+            </tr>
+        }
+    </tbody>
+</table>
